@@ -1,0 +1,58 @@
+.container {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: 
+    linear-gradient(rgba(29, 28, 28, 0.59), rgba(0, 0, 0, 0.7)),
+    url('/pandas.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main {
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 3px 6px 20px rgba(247, 243, 243, 0.377);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(11, 19, 11);
+    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  
+  .skillCard {
+    background-color: #0c3a689f;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(21, 18, 18, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .skillCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(15, 12, 12, 0.1);
+  }
+  
+  .skillCard h3 {
+    margin-bottom: 12px;
+    color: rgb(11, 204, 24);
+    font-size: 1.4rem;
+  }
+  
+  .skillCard p {
+    font-size: 1rem;
+    color: #0c0e11;
+    line-height: 1.6;
+  }
+  

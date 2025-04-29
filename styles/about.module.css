@@ -1,0 +1,59 @@
+/* ABOUT */
+.container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: 
+    linear-gradient(rgba(240, 236, 236, 0.884), rgba(177, 101, 101, 0.7)),
+    url('/formacao.jpg') center/cover no-repeat;
+  color: rgb(241, 225, 225);
+  display: flex;
+  justify-content: center;
+}
+
+.sectionBlock {
+  padding: 60px 20px;
+  background-color: rgba(18, 196, 228, 0.748);
+  color: rgb(66, 14, 189);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(245, 243, 243, 0.884);
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  /* propriedade corrigida */
+  color: rgb(16, 16, 19);
+}
+
+.subtitle {
+  font-size: 2rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.textBlock {
+  line-height: 1.6;
+}
+
+.certList {
+  line-height: 1.6;
+  list-style: disc;
+  padding-left: 40px;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+  .sectionBlock {
+    padding: 40px 15px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
