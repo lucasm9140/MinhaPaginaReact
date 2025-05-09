@@ -1,30 +1,30 @@
-// components/CommentForm.js
 "use client";
 import { useState } from "react";
 
 export default function CommentForm() {
-  const [email, setEmail] = useState("");
-  const [comment, setComment] = useState("");
+  const [text, setText] = useState("");
   const [sent, setSent] = useState(false);
 
   async function onSubmit(e) {
     e.preventDefault();
-    const res = await fetch("/api/comments", {
+    await fetch("/api/comments", {
       method: "POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({ email, comment }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text })
     });
-    if (res.ok) setSent(true);
+    setSent(true);
   }
 
-  if (sent) return <p>Obrigado pelo comentário!</p>;
+  if (sent) return <p>Comentário enviado!</p>;
   return (
     <form onSubmit={onSubmit}>
-      <input type="email" placeholder="Seu e-mail" value={email}
-             onChange={e=>setEmail(e.target.value)} required />
-      <textarea placeholder="Comentário" value={comment}
-                onChange={e=>setComment(e.target.value)} required />
-      <button type="submit">Enviar</button>
+      <textarea
+        placeholder="Seu comentário"
+        value={text}
+        onChange={e => setText(e.target.value)}
+        required
+      />
+      <button type="submit">Comentar</button>
     </form>
   );
 }

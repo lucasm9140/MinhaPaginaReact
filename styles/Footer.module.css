@@ -1,0 +1,19 @@
+.footer {
+    background-color: #2c3047;
+    color: rgb(11, 204, 24);
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  @media (max-width: 600px) {
+    .footer {
+      padding: 15px;
+      font-size: 16px;
+    }
+  }
+  

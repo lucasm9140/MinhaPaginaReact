@@ -7,15 +7,14 @@ export default async function handler(req, res) {
   if (!session) return res.status(401).json({ error: "Login required" });
 
   if (req.method === "POST") {
-    const { text } = req.body;
+    const { itemId, reaction } = req.body;
     const db = (await clientPromise).db();
-    await db.collection("comments").insertOne({
-      userId: session.user.id,
-      nickname: session.user.email.split("@")[0],
-      text,
-      createdAt: new Date(),
-    });
-    return res.status(201).json({ ok: true });
+    await db.collection("reactions").updateOne(
+      { userId: session.user.id, itemId },
+      { $set: { reaction, updatedAt: new Date() } },
+      { upsert: true }
+    );
+    return res.status(200).json({ ok: true });
   }
   res.status(405).end();
 }
