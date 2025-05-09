@@ -1,7 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Contact.module.css";
+import ContactForm from "../components/ContactForm";
 
-const Contact = () => {
+const contact = () => {
   return (
     <>
       <Head>
@@ -13,10 +14,15 @@ const Contact = () => {
           <p>Email: lucas.jesus6@aluno.senai.br</p>
           <p>LinkedIn: <a href="https://linkedin.com/in/lucas-matheus-rodrigues-de-jesus-285890279" target="_blank">Meu Perfil</a></p>
           <p>GitHub: <a href="https://github.com/seuUsuario" target="_blank">github.com/seuUsuario</a></p>
+        {/* Formulário de contato */}
+          <section style={{ marginTop: "2rem" }}>
+          <h2>Envie uma mensagem</h2>
+          <ContactForm />
+          </section>
         </main>
       </div>
     </>
   );
 };
 
-export default Contact;
+export default contact;

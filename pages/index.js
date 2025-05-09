@@ -1,10 +1,12 @@
+// pages/index.js
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Home.module.css";  // Certifique-se de que o caminho está correto
+import styles from "../styles/Home.module.css";
+import NewsletterForm from "../components/NewsletterForm";
+import CommentsSection from "../components/CommentsSection";
 
-// Caminhos das imagens públicas (sem a necessidade de importar)
 const projects = [
   { img: "/proj.png", title: "IA Gestão Financeira", desc: "...", link: "https://..." },
   { img: "/java.jpg", title: "ERP Web em Java", desc: "...", link: "https://..." },
@@ -34,7 +36,7 @@ export default function Home() {
 
       <section
         className={styles.hero}
-        style={{ backgroundImage: `url('/fundo1.jpg')` }} // Alterado para caminho direto
+        style={{ backgroundImage: `url('/fundo1.jpg')` }}
       >
         <div className={styles.heroContent}>
           {!nomeFinal ? (
@@ -54,9 +56,7 @@ export default function Home() {
             <div>
               <h1>Olá, {nomeFinal}!</h1>
               <h2>Meu nome é Lucas Matheus</h2>
-              <p>
-                Sou Desenvolvedor de Software, presto suporte de TI, consultorias e mais...
-              </p>
+              <p>Sou Desenvolvedor de Software, presto suporte de TI, consultorias e mais...</p>
             </div>
           )}
         </div>
@@ -80,6 +80,17 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className={styles.newsletter}>
+        <h2>Inscreva-se na Newsletter</h2>
+        <NewsletterForm />
+      </section>
+
+      {/* Comentários */}
+      <section className={styles.comments}>
+        <CommentsSection />
       </section>
     </>
   );
