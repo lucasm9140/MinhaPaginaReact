@@ -1,33 +1,32 @@
+// components/NewsletterForm.js
 "use client";
 import { useState } from "react";
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
-  const [msg, setMsg] = useState("");
-
-  async function onSubmit(e) {
+  const [status, setStatus] = useState("");
+  async function handleSubmit(e) {
     e.preventDefault();
-    const res = await fetch("/api/newsletter", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    const res = await fetch('/api/newsletter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
     });
-    if (res.ok) setMsg("Obrigado pela inscrição!");
-    else setMsg("Falha ao inscrever.");
-    setEmail("");
+    if (res.ok) setStatus('Inscrição realizada!');
+    else setStatus('Erro ao inscrever.');
+    setEmail('');
   }
-
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSubmit} className="newsletter-form">
       <input
         type="email"
         required
-        placeholder="Seu email"
+        placeholder="seu@email.com"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={e => setEmail(e.target.value)}
       />
-      <button type="submit">Inscrever</button>
-      {msg && <p>{msg}</p>}
+      <button type="submit">Inscrever-se</button>
+      {status && <p>{status}</p>}
     </form>
   );
 }

@@ -1,6 +1,7 @@
-import { getServerSession } from "next-auth/react";
-import clientPromise from "../../lib/db/mongodb";
+// pages/api/comments.js
+import { getServerSession } from "next-auth";
 import { authOptions } from "./auth/[...nextauth]";
+import clientPromise from "../../lib/db/mongodb";
 
 export default async function handler(req, res) {
   const session = await getServerSession(req, res, authOptions);
@@ -17,7 +18,8 @@ export default async function handler(req, res) {
     });
     return res.status(201).json({ ok: true });
   }
-  // GET
+
+  // GET: retorna todos os comentários
   const comments = await db.collection("comments").find().toArray();
   res.status(200).json(comments);
 }

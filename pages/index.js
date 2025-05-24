@@ -1,4 +1,6 @@
 // pages/index.js
+"use client";  // << ATENÇÃO: tem que vir antes de qualquer import!
+
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";

@@ -1,14 +1,15 @@
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "./auth/[...nextauth].js";
+// pages/api/reactions.js
+import { getServerSession } from "next-auth";
+import { authOptions } from "./auth/[...nextauth]";
 import clientPromise from "../../lib/db/mongodb";
 
 export default async function handler(req, res) {
   const session = await getServerSession(req, res, authOptions);
   if (!session) return res.status(401).json({ error: "Login required" });
 
+  const db = (await clientPromise).db();
   if (req.method === "POST") {
     const { itemId, reaction } = req.body;
-    const db = (await clientPromise).db();
     await db.collection("reactions").updateOne(
       { userId: session.user.id, itemId },
       { $set: { reaction, updatedAt: new Date() } },

@@ -1,3 +1,4 @@
+"use client";  // << ATENÇÃO: tem que vir antes de qualquer import!
 import styles from "../styles/Footer.module.css"; // Caminho do arquivo CSS
 
 const Footer = () => {

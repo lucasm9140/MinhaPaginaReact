@@ -1,3 +1,4 @@
+// components/CommentsSection.js
 "use client";
 import { useState, useEffect } from "react";
 import { useSession, signIn } from "next-auth/react";
@@ -8,7 +9,9 @@ export default function CommentsSection() {
   const [text, setText] = useState("");
 
   useEffect(() => {
-    fetch("/api/comments").then((r) => r.json()).then(setComments);
+    fetch("/api/comments")
+      .then((r) => r.json())
+      .then(setComments);
   }, []);
 
   async function submit() {
@@ -34,10 +37,7 @@ export default function CommentsSection() {
   return (
     <section>
       <h3>Comentários</h3>
-      <textarea
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
+      <textarea value={text} onChange={(e) => setText(e.target.value)} />
       <button onClick={submit}>Enviar</button>
       <ul>
         {comments.map((c) => (
@@ -49,3 +49,4 @@ export default function CommentsSection() {
     </section>
   );
 }
+
