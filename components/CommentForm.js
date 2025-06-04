@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-
+console.log("🔍 CommentForm loaded:", CommentForm);
 export default function CommentForm() {
   const [text, setText] = useState("");
   const [sent, setSent] = useState(false);

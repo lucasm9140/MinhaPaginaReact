@@ -1,6 +1,6 @@
+"use client"; 
+// << ATENÇÃO: tem que vir antes de qualquer import!
 // components/Navbar.js
-"use client";  // << ATENÇÃO: tem que vir antes de qualquer import!
-
 import Link from "next/link";
 import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
@@ -16,7 +16,7 @@ import {
   FaSignInAlt,
 } from "react-icons/fa";
 import styles from "./Navbar.module.css";
-
+console.log("🔍 Navbar loaded:", Navbar);
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { data: session } = useSession();

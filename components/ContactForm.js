@@ -1,5 +1,5 @@
+"use client"; 
 // components/ContactForm.js
-"use client";
 import { useState } from "react";
 import styles from "../styles/Contact.module.css";
 

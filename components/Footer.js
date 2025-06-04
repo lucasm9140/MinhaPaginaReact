@@ -1,5 +1,7 @@
-"use client";  // << ATENÇÃO: tem que vir antes de qualquer import!
-import styles from "../styles/Footer.module.css"; // Caminho do arquivo CSS
+"use client"; 
+// << ATENÇÃO: tem que vir antes de qualquer import!
+import styles from "../styles/Footer.module.css"; 
+// Caminho do arquivo CSS
 
 const Footer = () => {
   return (
@@ -8,5 +10,5 @@ const Footer = () => {
     </footer>
   );
 };
-
+console.log("🔍 Footer loaded:", Footer);
 export default Footer;

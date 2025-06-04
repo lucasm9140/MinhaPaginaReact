@@ -1,5 +1,6 @@
-// components/NewsletterForm.js
 "use client";
+console.log("📬 NewsletterForm loaded:", NewsletterForm);
+// components/NewsletterForm.js
 import { useState } from "react";
 
 export default function NewsletterForm() {

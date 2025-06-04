@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-
+console.log("🔍 ReactionButtons loaded:", ReactionButtons);
 export default function ReactionButtons({ itemId }) {
   const [reaction, setReaction] = useState(null);
 

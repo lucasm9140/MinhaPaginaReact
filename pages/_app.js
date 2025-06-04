@@ -1,6 +1,6 @@
+"use client";  
+// << ATENÇÃO: tem que vir antes de qualquer import!
 // pages/_app.js
-"use client";  // << ATENÇÃO: tem que vir antes de qualquer import!
-
 import "../styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 import Layout from "../components/Layout";

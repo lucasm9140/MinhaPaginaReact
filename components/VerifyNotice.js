@@ -1,5 +1,7 @@
+"use client";
+// components/VerifyNotice.js
 import { useSession } from "next-auth/react";
-
+console.log("🔍 VerifyNotice loaded:", VerifyNotice);
 export default function VerifyNotice() {
   const { data: session, status } = useSession();
   if (status === "loading" || session) return null;

@@ -1,7 +1,8 @@
-// components/CommentsSection.js
 "use client";
+// components/CommentsSection.js
 import { useState, useEffect } from "react";
 import { useSession, signIn } from "next-auth/react";
+console.log("💬 CommentsSection loaded:", CommentsSection);
 
 export default function CommentsSection() {
   const { data: session } = useSession();
@@ -26,18 +27,22 @@ export default function CommentsSection() {
     setComments(updated);
   }
 
-  if (!session)
+  if (!session) {
     return (
       <p>
         Você precisa{" "}
         <button onClick={() => signIn()}>entrar</button> para ver/comentar.
       </p>
     );
+  }
 
   return (
     <section>
       <h3>Comentários</h3>
-      <textarea value={text} onChange={(e) => setText(e.target.value)} />
+      <textarea
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
       <button onClick={submit}>Enviar</button>
       <ul>
         {comments.map((c) => (
@@ -49,4 +54,6 @@ export default function CommentsSection() {
     </section>
   );
 }
+
+
 
